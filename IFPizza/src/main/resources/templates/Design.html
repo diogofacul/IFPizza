@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Design IFPizza</title>
+</head>
+<body>
+
+<h1> Monte Sua Pizza </h1>
+
+<form method="post" th:object="${pizza}">
+	
+	<div id="rim">
+	<h3> Escolha sua borda:</h3>
+	<div th:each="ingredients : ${rim}">
+		<input type ="checkbox" name="ingredients" th:value="${ingredients.id}" th:id="${ingredients.id}">
+		<label th:for="ingredients"
+			th:text="${ingredients.name}"
+		>ingredients</label>
+	</div>
+	</div>
+	
+	<div id="cheese">
+	<h3> Escolha seu queijo:</h3>
+	<div th:each="ingredients : ${cheese}">
+		<input type ="checkbox" name="ingredients" th:value="${ingredients.id}" th:id="${ingredients.id}">
+		<label th:for="ingredients"
+			th:text="${ingredients.name}"
+		>ingredients</label>
+	</div>
+	</div>
+	
+	<div id="rim">
+	<h3> Escolha sua proteina:</h3>
+	<div th:each="ingredients : ${protein}">
+		<input type ="checkbox" name="ingredients" th:value="${ingredients.id}" th:id="${ingredients.id}">
+		<label th:for="ingredients"
+			th:text="${ingredients.name}"
+		>ingredients</label>
+	</div>
+	</div>
+	
+	<div id="vegetables">
+	<h3> Escolha sua vegetables:</h3>
+	<div th:each="ingredients : ${vegetables}">
+		<input type ="checkbox" name="ingredients" th:value="${ingredients.id}" th:id="${ingredients.id}">
+		<label th:for="ingredients"
+			th:text="${ingredients.name}"
+		>ingredients</label>
+	</div>
+	</div>
+
+</form>
+
+
+</body>
+</html>
